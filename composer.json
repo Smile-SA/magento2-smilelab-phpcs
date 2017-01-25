@@ -1,0 +1,26 @@
+{
+    "name": "smile/magento2-smilelab-phpcs",
+    "type": "library",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Aurélien FOUCRET",
+            "email": "aurelien.foucret@smile.fr"
+        },
+        {
+            "name": "Romain Ruaud",
+            "email": "romain.ruaud@smile.fr"
+        }
+    ],
+    "description": "PHPCS Coding standards for Smile Lab Magento2 community projects.",
+    "homepage": "https://github.com/Smile-SA/magento2-smilelab-phpcs",
+    "keywords": [
+        "php",
+        "phpcs",
+        "coding standards"
+    ],
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "*",
+        "squizlabs/php_codesniffer": "*"
+    }
+}
