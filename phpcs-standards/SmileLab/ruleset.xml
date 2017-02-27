@@ -4,13 +4,14 @@
     <description>Coding standard for SmileLab projects.</description>
     
     <rule ref="PSR2">
-        <exclude name="Generic.Files.LineLength"/>
         <exclude name="PSR2.Methods.MethodDeclaration"/>
     </rule>
     
     <rule ref="Generic.Files.LineLength">
-        <property name="lineLimit" value="135" />
-        <property name="absoluteLineLimit" value="135 "/>
+        <properties>
+            <property name="lineLimit" value="135" />
+            <property name="absoluteLineLimit" value="135 "/>
+        </properties>
     </rule>
     
     <rule ref="Generic.ControlStructures.InlineControlStructure" />
