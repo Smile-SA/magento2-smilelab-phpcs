@@ -19,8 +19,9 @@
         "phpcs",
         "coding standards"
     ],
-    "require-dev": {
-        "friendsofphp/php-cs-fixer": "*",
-        "squizlabs/php_codesniffer": "*"
+    "require": {
+        "squizlabs/php_codesniffer": "^2.6.1",
+        "magento/marketplace-eqp": "^1.0.0",
+        "friendsofphp/php-cs-fixer": "*"
     }
 }
