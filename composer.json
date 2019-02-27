@@ -20,8 +20,8 @@
         "coding standards"
     ],
     "require": {
-        "squizlabs/php_codesniffer": "2.6.*",
-        "magento/marketplace-eqp": "^1.0.5",
+        "squizlabs/php_codesniffer": "3.*",
+        "magento/marketplace-eqp": "~2.0.0",
         "friendsofphp/php-cs-fixer": "*"
     }
 }
