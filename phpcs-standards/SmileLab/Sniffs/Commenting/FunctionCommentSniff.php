@@ -4,23 +4,23 @@
  *
  * @category  SmileLab
  * @package   SmileLab\CodingStandards
- * @author    Aurelien FOUCRET <aurelien.foucret@smile.fr>
- * @copyright 2016 SmileLab
+ * @author    Romain Ruaud <romain.ruaud@smile.fr>
+ * @copyright 2019 Smile
  * @license   Open Software License ("OSL") v. 3.0
  */
-class SmileLab_Sniffs_Commenting_FunctionCommentSniff extends PEAR_Sniffs_Commenting_FunctionCommentSniff
+class SmileLab_Sniffs_Commenting_FunctionCommentSniff extends PHP_CodeSniffer\Standards\PEAR\Sniffs\Commenting\FunctionCommentSniff
 {
 
     /**
      * Processes this test, when one of its tokens is encountered.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile The file being scanned.
+     * @param int                         $stackPtr  The position of the current token
+     *                                               in the stack passed in $tokens.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(\PHP_CodeSniffer\Files\File $phpcsFile, $stackPtr)
     {
         if (false === $commentEnd = $phpcsFile->findPrevious(array(T_COMMENT, T_DOC_COMMENT, T_CLASS, T_FUNCTION, T_OPEN_TAG), ($stackPtr - 1))) {
             return;
@@ -35,14 +35,15 @@ class SmileLab_Sniffs_Commenting_FunctionCommentSniff extends PEAR_Sniffs_Commen
     /**
      * Process the return comment of this function comment.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
-     * @param int                  $stackPtr     The position of the current token
-     *                                           in the stack passed in $tokens.
-     * @param int                  $commentStart The position in the stack where the comment started.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile    The file being scanned.
+     * @param int                         $stackPtr     The position of the current token
+     *                                                  in the stack passed in $tokens.
+     * @param int                         $commentStart The position in the stack where the comment started.
      *
      * @return void
+     * @throws \PHP_CodeSniffer\Exceptions\RuntimeException
      */
-    protected function processReturn(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $commentStart)
+    protected function processReturn(\PHP_CodeSniffer\Files\File $phpcsFile, $stackPtr, $commentStart)
     {
 
         if ($this->isInheritDoc($phpcsFile, $stackPtr)) {
@@ -76,13 +77,14 @@ class SmileLab_Sniffs_Commenting_FunctionCommentSniff extends PEAR_Sniffs_Commen
     /**
      * Is the comment an inheritdoc?
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile The file being scanned.
+     * @param int                         $stackPtr  The position of the current token
+     *                                               in the stack passed in $tokens.
      *
      * @return boolean True if the comment is an inheritdoc
+     * @throws \PHP_CodeSniffer\Exceptions\RuntimeException
      */
-    protected function isInheritDoc(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    protected function isInheritDoc(\PHP_CodeSniffer\Files\File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -97,14 +99,15 @@ class SmileLab_Sniffs_Commenting_FunctionCommentSniff extends PEAR_Sniffs_Commen
     /**
      * Process the function parameter comments.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile    The file being scanned.
-     * @param int                  $stackPtr     The position of the current token
-     *                                           in the stack passed in $tokens.
-     * @param int                  $commentStart The position in the stack where the comment started.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile    The file being scanned.
+     * @param int                         $stackPtr     The position of the current token
+     *                                                  in the stack passed in $tokens.
+     * @param int                         $commentStart The position in the stack where the comment started.
      *
      * @return void
+     * @throws \PHP_CodeSniffer\Exceptions\RuntimeException
      */
-    protected function processParams(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $commentStart)
+    protected function processParams(\PHP_CodeSniffer\Files\File $phpcsFile, $stackPtr, $commentStart)
     {
         $tokens = $phpcsFile->getTokens();
 

@@ -18,11 +18,11 @@
  *
  * @category  SmileLab
  * @package   SmileLab\CodingStandards
- * @author    Aurelien FOUCRET <aurelien.foucret@smile.fr>
- * @copyright 2016 SmileLab
+ * @author    Romain Ruaud <romain.ruaud@smile.fr>
+ * @copyright 2019 Smile
  * @license   Open Software License ("OSL") v. 3.0
  */
-class SmileLab_Sniffs_Classes_PropertyDeclarationSniff implements PHP_CodeSniffer_Sniff
+class SmileLab_Sniffs_Classes_PropertyDeclarationSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 {
 
     /**
@@ -45,13 +45,13 @@ class SmileLab_Sniffs_Classes_PropertyDeclarationSniff implements PHP_CodeSniffe
     /**
      * Processes this test, when one of its tokens is encountered.
      *
-     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
-     * @param int                  $stackPtr  The position of the current token
-     *                                        in the stack passed in $tokens.
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile All the tokens found in the document.
+     * @param int                         $stackPtr  The position of the current token in
+     *                                               the stack passed in $tokens.
      *
      * @return void
      */
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(\PHP_CodeSniffer\Files\File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
         $scope = $phpcsFile->findNext(

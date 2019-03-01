@@ -22,6 +22,7 @@
     <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall" />
     <rule ref="Generic.Commenting.Fixme" />
     <rule ref="Generic.Commenting.Todo" />
+    <rule ref="Generic.PHP.ForbiddenFunctions" />
 
     <rule ref="Squiz.Arrays.ArrayBracketSpacing" />
     <rule ref="Squiz.ControlStructures.ControlSignature" />
@@ -31,9 +32,9 @@
     <rule ref="Squiz.Functions.GlobalFunction" />
     <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops" />
     <rule ref="Squiz.PHP.LowercasePHPFunctions" />
-    <rule ref="Squiz.PHP.ForbiddenFunctions" />
     <rule ref="Squiz.Scope.StaticThisUsage" />
     <rule ref="Squiz.Scope.MemberVarScope" />
+    <rule ref="Squiz.Scope.MethodScope" />
     <rule ref="Squiz.WhiteSpace.OperatorSpacing" />
 
     <rule ref="PSR2.Classes.PropertyDeclaration">

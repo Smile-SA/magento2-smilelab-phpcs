@@ -4,11 +4,11 @@
  *
  * @category  SmileLab
  * @package   SmileLab\CodingStandards
- * @author    Aurelien FOUCRET <aurelien.foucret@smile.fr>
- * @copyright 2016 SmileLab
+ * @author    Romain Ruaud <romain.ruaud@smile.fr>
+ * @copyright 2019 Smile
  * @license   Open Software License ("OSL") v. 3.0
  */
-class SmileLab_Sniffs_Commenting_ClassCommentSniff extends PEAR_Sniffs_Commenting_ClassCommentSniff
+class SmileLab_Sniffs_Commenting_ClassCommentSniff extends \PHP_CodeSniffer\Standards\PEAR\Sniffs\Commenting\ClassCommentSniff
 {
     /**
      * Tags in correct order and related info.

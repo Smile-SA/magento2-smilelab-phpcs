@@ -4,11 +4,11 @@
  *
  * @category  SmileLab
  * @package   SmileLab\CodingStandards
- * @author    Aurelien FOUCRET <aurelien.foucret@smile.fr>
- * @copyright 2016 SmileLab
+ * @author    Romain Ruaud <romain.ruaud@smile.fr>
+ * @copyright 2019 Smile
  * @license   Open Software License ("OSL") v. 3.0
  */
-class SmileLab_Sniffs_Commenting_FileCommentSniff extends PEAR_Sniffs_Commenting_FileCommentSniff
+class SmileLab_Sniffs_Commenting_FileCommentSniff extends \PHP_CodeSniffer\Standards\PEAR\Sniffs\Commenting\FileCommentSniff
 {
     /**
      * Tags in correct order and related info.
@@ -73,7 +73,16 @@ class SmileLab_Sniffs_Commenting_FileCommentSniff extends PEAR_Sniffs_Commenting
         ),
     );
 
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile The file being scanned.
+     * @param int                         $stackPtr  The position of the current token
+     *                                               in the stack passed in $tokens.
+     *
+     * @return int
+     */
+    public function process(\PHP_CodeSniffer\Files\File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -164,7 +173,15 @@ class SmileLab_Sniffs_Commenting_FileCommentSniff extends PEAR_Sniffs_Commenting
 
     }//end process()
 
-    protected function processVersion(PHP_CodeSniffer_File $phpcsFile, array $tags)
+    /**
+     * Process the version tag.
+     *
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile The file being scanned.
+     * @param array                       $tags      The tokens for these tags.
+     *
+     * @return void
+     */
+    protected function processVersion($phpcsFile, array $tags)
     {
         return;
     }
