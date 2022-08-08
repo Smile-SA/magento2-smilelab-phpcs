@@ -1,6 +1,6 @@
 {
     "name": "smile/magento2-smilelab-phpcs",
-    "type": "library",
+    "type": "phpcodesniffer-standard",
     "license": "OSL-3.0",
     "authors": [
         {
@@ -20,14 +20,11 @@
         "coding standards"
     ],
     "require": {
-        "squizlabs/php_codesniffer": "3.*",
-        "magento/marketplace-eqp": "~2.0.0",
-        "friendsofphp/php-cs-fixer": "*"
+        "magento/magento-coding-standard": "*",
+        "slevomat/coding-standard": "*",
+        "squizlabs/php_codesniffer": "^3.5"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://repo.magento.com/"
-        }
-    ]
+    "config": {
+        "sort-packages": true
+    }
 }

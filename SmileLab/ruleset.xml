@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<ruleset name="SmileLab" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <description>Coding standard for Magento projects.</description>
+
+    <exclude-pattern>/vendor/*</exclude-pattern>
+
+    <!-- PSR-2 coding standard -->
+    <rule ref="PSR2">
+        <!-- Not compatible with PSR12.ControlStructures.ControlStructureSpacing.FirstExpressionLine -->
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
+    </rule>
+
+    <!-- PSR-12 coding standard -->
+    <rule ref="PSR12"/>
+
+    <!-- Magento2 -->
+    <rule ref="Magento2">
+        <!-- We need to disable these magento2 rules in order to avoid require useless annotation typing  -->
+        <exclude name="Magento2.Annotation.MethodArguments.ParamMissing"/>
+        <exclude name="Magento2.Annotation.MethodArguments.ArgumentMissing"/>
+        <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.MissingVar"/>
+        <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.Missing"/>
+        <exclude name="Magento2.Functions.DiscouragedFunction.Discouraged"/>
+        <exclude name="Magento2.Functions.DiscouragedFunction.DiscouragedWithAlternative"/>
+    </rule>
+
+    <!-- Generic rules not included in PSR-12 -->
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <rule ref="Generic.Formatting.SpaceAfterNot">
+        <properties>
+            <property name="spacing" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.PHP.DeprecatedFunctions"/>
+    <rule ref="Generic.Strings.UnnecessaryStringConcat">
+        <properties>
+            <property name="allowMultiline" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- Disallows implicit array creation -->
+    <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation"/>
+
+    <!-- Checks whitespace in single line array declarations -->
+    <rule ref="SlevomatCodingStandard.Arrays.SingleLineArrayWhitespace">
+        <properties>
+            <property name="enableEmptyArrayCheck" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- This sniff enforces trailing commas in multi-line arrays -->
+    <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
+
+    <!-- Disallows using public properties -->
+    <rule ref="SlevomatCodingStandard.Classes.ForbiddenPublicProperty"/>
+
+    <!-- Forbidden PHPDoc annotations -->
+    <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
+        <properties>
+            <property name="forbiddenAnnotations" type="array">
+                <element value="@class"/>
+                <element value="@package"/>
+                <element value="@subpackage"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Expected PHPDoc format -->
+    <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing">
+        <properties>
+            <property name="linesCountBeforeFirstContent" value="0"/>
+            <property name="linesCountAfterLastContent" value="0"/>
+            <property name="linesCountBetweenDescriptionAndAnnotations" value="1"/>
+            <property name="linesCountBetweenAnnotationsGroups" value="1"/>
+        </properties>
+    </rule>
+
+    <!-- Reports empty comments -->
+    <rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
+
+    <!-- Disallows assignments in if, elseif and do-while loop conditions -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
+
+    <!-- Requires use of null coalesce operator when possible -->
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
+
+    <!-- Checks whether uses at the top of a file are alphabetically sorted -->
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+
+    <!-- Looks for use alias that is same as unqualified name -->
+    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
+
+    <!-- Looks for unused imports from other namespaces -->
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- Disallows direct call of __invoke() -->
+    <rule ref="SlevomatCodingStandard.PHP.DisallowDirectMagicInvokeCall"/>
+
+    <!-- Enforces using short form of list syntax -->
+    <rule ref="SlevomatCodingStandard.PHP.ShortList"/>
+
+    <!-- Enforces using shorthand cast operators -->
+    <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
+
+    <!-- Looks for useless parentheses -->
+    <rule ref="SlevomatCodingStandard.PHP.UselessParentheses"/>
+
+    <!-- Looks for useless semicolons -->
+    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
+
+    <!-- Enforces having declare(strict_types=1) at the top of each PHP file -->
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="declareOnFirstLine" value="false"/>
+            <property name="linesCountBeforeDeclare" value="1"/><!--TODO change to 1-->
+            <property name="linesCountAfterDeclare" value="1"/>
+            <property name="spacesCountAroundEqualsSign" value="0"/>
+        </properties>
+        <exclude-pattern>*.phtml</exclude-pattern>
+    </rule>
+
+    <!-- Checks for missing property typehints -->
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
+        <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification"/>
+        <!-- We need to exclude this rule because in magento lot of property are not typed -->
+        <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint"/>
+    </rule>
+
+    <!-- Checks for missing parameter typehints -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification"/>
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation"/>
+    </rule>
+
+    <!-- Checks for missing return typehints -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
+        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification"/>
+        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.UselessAnnotation"/>
+    </rule>
+
+    <!-- Enforces using shorthand scalar typehints -->
+    <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
+
+    <!-- Checks whether the nullablity ? symbol is present before each nullable and optional parameter -->
+    <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
+
+    <!-- Enforces null type hint on last position in annotations -->
+    <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
+
+    <!-- Checks format of union type hints (only enabled if php >= 8.0) -->
+    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
+        <properties>
+            <property name="withSpaces" value="no"/>
+            <property name="nullPosition" value="last"/>
+        </properties>
+    </rule>
+
+    <!-- Reports useless @var annotation for constants because the type of constant is always clear -->
+    <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
+</ruleset>
