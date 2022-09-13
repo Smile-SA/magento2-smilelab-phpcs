@@ -6,14 +6,10 @@
 
     <exclude-pattern>/vendor/*</exclude-pattern>
 
-    <!-- PSR-2 coding standard -->
-    <rule ref="PSR2">
-        <!-- Not compatible with PSR12.ControlStructures.ControlStructureSpacing.FirstExpressionLine -->
-        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
-    </rule>
-
     <!-- PSR-12 coding standard -->
-    <rule ref="PSR12"/>
+    <rule ref="PSR12">
+        <exclude name="Generic.PHP.DisallowAlternativePHPTags.MaybeASPOpenTagFound"/>
+    </rule>
 
     <!-- Magento2 -->
     <rule ref="Magento2">
@@ -24,6 +20,7 @@
         <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.Missing"/>
         <exclude name="Magento2.Functions.DiscouragedFunction.Discouraged"/>
         <exclude name="Magento2.Functions.DiscouragedFunction.DiscouragedWithAlternative"/>
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
     </rule>
 
     <!-- Generic rules not included in PSR-12 -->
@@ -128,8 +125,6 @@
     <!-- Checks for missing property typehints -->
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
         <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingTraversableTypeHintSpecification"/>
-        <!-- We need to exclude this rule because in magento lot of property are not typed -->
-        <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint"/>
     </rule>
 
     <!-- Checks for missing parameter typehints -->
