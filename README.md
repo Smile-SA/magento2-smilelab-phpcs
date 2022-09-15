@@ -22,28 +22,6 @@ composer require --dev smile/magento2-smilelab-phpcs
 
 Create a configuration file named`phpcs.xml.dist` at the root of your project.
 
-Example for a Magento module:
-
-```xml
-<?xml version="1.0"?>
-<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
-
-    <arg name="basepath" value="."/>
-    <arg name="extensions" value="php,phtml"/>
-    <arg name="colors"/>
-
-    <!-- Show progress of the run -->
-    <arg value="p"/>
-
-    <!-- Show sniff codes -->
-    <arg value="s"/>
-
-    <rule ref="SmileLab"/>
-
-    <exclude-pattern>vendor/*</exclude-pattern>
-</ruleset>
-```
-
 Example for a Magento project:
 
 ```xml
@@ -53,17 +31,40 @@ Example for a Magento project:
     <arg name="basepath" value="."/>
     <arg name="extensions" value="php,phtml"/>
     <arg name="colors"/>
-
-    <!-- Show progress of the run -->
     <arg value="p"/>
-
-    <!-- Show sniff codes -->
     <arg value="s"/>
-
+    
     <rule ref="SmileLab"/>
 
     <file>app/code</file>
 </ruleset>
+```
+
+Example for a community module:
+
+```xml
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <arg name="basepath" value="."/>
+    <arg name="extensions" value="php,phtml"/>
+    <arg name="colors"/>
+    <arg value="p"/>
+    <arg value="s"/>
+
+    <config name="php_version" value="{{min_php_version}}"/>
+
+    <rule ref="SmileLab"/>
+
+    <exclude-pattern>vendor/*</exclude-pattern>
+</ruleset>
+```
+
+Where `{{min_php_version}}` is the minimum compatible version of PHP required by your module.
+For example, if the min version is PHP 7.4:
+
+```xml
+<config name="php_version" value="70400"/>
 ```
 
 ## Usage
