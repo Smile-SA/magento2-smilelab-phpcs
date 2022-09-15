@@ -4,12 +4,8 @@
     "license": "OSL-3.0",
     "authors": [
         {
-            "name": "Aurélien FOUCRET",
-            "email": "aurelien.foucret@smile.fr"
-        },
-        {
-            "name": "Romain Ruaud",
-            "email": "romain.ruaud@smile.fr"
+            "name": "Smile Community of Practice",
+            "homepage": "https://www.smile.eu"
         }
     ],
     "description": "PHPCS Coding standards for Smile Magento2 community projects.",
