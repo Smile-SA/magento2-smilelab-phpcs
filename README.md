@@ -80,3 +80,17 @@ You can fix most of the errors found with:
 ```bash
 php vendor/bin/phpcbf --extensions=php,phtml
 ```
+
+## Guidelines
+
+If your class overrides a method declared in a parent class, use `@inheritdoc`:
+
+```php
+/**
+ * @inheritdoc
+ */
+public function execute(InputInterface $input, OutputInterface $output): int
+{
+    // ...
+}
+```
