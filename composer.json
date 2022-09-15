@@ -1,5 +1,6 @@
 {
     "name": "smile/magento2-smilelab-phpcs",
+    "description": "PHPCS coding standard for Magento projects.",
     "type": "phpcodesniffer-standard",
     "license": "OSL-3.0",
     "authors": [
@@ -7,13 +8,6 @@
             "name": "Smile Community of Practice",
             "homepage": "https://www.smile.eu"
         }
-    ],
-    "description": "PHPCS Coding standards for Smile Magento2 community projects.",
-    "homepage": "https://github.com/Smile-SA/magento2-smilelab-phpcs",
-    "keywords": [
-        "php",
-        "phpcs",
-        "coding standards"
     ],
     "require": {
         "magento/magento-coding-standard": "*",
