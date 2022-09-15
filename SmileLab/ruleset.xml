@@ -13,13 +13,14 @@
 
     <!-- Magento2 -->
     <rule ref="Magento2">
-        <!-- We need to disable these magento2 rules in order to avoid require useless annotation typing  -->
+        <exclude name="Magento2.Functions.DiscouragedFunction.Discouraged"/>
+        <exclude name="Magento2.Functions.DiscouragedFunction.DiscouragedWithAlternative"/>
+        <!-- Exclude rules that conflict with UselessAnnotation -->
         <exclude name="Magento2.Annotation.MethodArguments.ParamMissing"/>
         <exclude name="Magento2.Annotation.MethodArguments.ArgumentMissing"/>
         <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.MissingVar"/>
         <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.Missing"/>
-        <exclude name="Magento2.Functions.DiscouragedFunction.Discouraged"/>
-        <exclude name="Magento2.Functions.DiscouragedFunction.DiscouragedWithAlternative"/>
+        <!-- Exclude rules that conflict with PSR-12 -->
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
     </rule>
 
