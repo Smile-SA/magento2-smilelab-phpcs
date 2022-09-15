@@ -14,7 +14,7 @@ It uses the following rulesets:
 
 To use this ruleset, require it in composer:
 
-```
+```shell
 composer require --dev smile/magento2-smilelab-phpcs
 ```
 
@@ -71,13 +71,13 @@ For example, if the min version is PHP 7.4:
 
 You can run phpcs with this command:
 
-```bash
+```shell
 php vendor/bin/phpcs -s --extensions=php,phtml
 ```
 
 You can fix most of the errors found with:
 
-```bash
+```shell
 php vendor/bin/phpcbf --extensions=php,phtml
 ```
 
