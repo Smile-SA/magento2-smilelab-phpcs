@@ -16,10 +16,8 @@
         <exclude name="Magento2.Functions.DiscouragedFunction.Discouraged"/>
         <exclude name="Magento2.Functions.DiscouragedFunction.DiscouragedWithAlternative"/>
         <!-- Exclude rules that conflict with UselessAnnotation -->
-        <exclude name="Magento2.Annotation.MethodArguments.ParamMissing"/>
-        <exclude name="Magento2.Annotation.MethodArguments.ArgumentMissing"/>
-        <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.MissingVar"/>
-        <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.Missing"/>
+        <exclude name="Magento2.Annotation.MethodArguments"/>
+        <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting"/>
         <!-- Exclude rules that conflict with PSR-12 -->
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
     </rule>
@@ -37,6 +35,9 @@
             <property name="allowMultiline" value="true"/>
         </properties>
     </rule>
+
+    <!-- Custom phpcs rules -->
+    <rule ref="SmileLab.Commenting.FunctionComment"/>
 
     <!-- Disallows implicit array creation -->
     <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation"/>
@@ -131,13 +132,11 @@
     <!-- Checks for missing parameter typehints -->
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification"/>
-        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation"/>
     </rule>
 
     <!-- Checks for missing return typehints -->
     <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint">
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification"/>
-        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.UselessAnnotation"/>
     </rule>
 
     <!-- Enforces using shorthand scalar typehints -->

@@ -9,6 +9,11 @@
             "homepage": "https://www.smile.eu"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "SmileLab\\": ""
+        }
+    },
     "require": {
         "magento/magento-coding-standard": "*",
         "slevomat/coding-standard": "*",
