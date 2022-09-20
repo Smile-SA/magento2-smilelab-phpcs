@@ -17,6 +17,7 @@
         <exclude name="Magento2.Functions.DiscouragedFunction.DiscouragedWithAlternative"/>
         <!-- Exclude rules that conflict with UselessAnnotation -->
         <exclude name="Magento2.Annotation.MethodArguments"/>
+        <exclude name="Magento2.Annotation.MethodAnnotationStructure.MethodArguments"/>
         <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting"/>
         <!-- Exclude rules that conflict with PSR-12 -->
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
