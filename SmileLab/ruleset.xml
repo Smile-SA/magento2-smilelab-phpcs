@@ -56,6 +56,9 @@
     <!-- Disallows using public properties -->
     <rule ref="SlevomatCodingStandard.Classes.ForbiddenPublicProperty"/>
 
+    <!-- Requires use of constructor property promotion -->
+    <rule ref="SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion"/>
+
     <!-- Forbidden PHPDoc annotations -->
     <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
         <properties>
