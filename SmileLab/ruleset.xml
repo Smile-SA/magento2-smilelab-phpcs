@@ -73,12 +73,6 @@
             <property name="linesCountBeforeFirstContent" value="0"/>
             <property name="linesCountAfterLastContent" value="0"/>
             <property name="linesCountBetweenDescriptionAndAnnotations" value="1"/>
-            <property name="linesCountBetweenAnnotationsGroups" value="1"/>
-            <property name="annotationsGroups" type="array">
-                <element value="
-                    @inheritdoc,
-                "/>
-            </property>
         </properties>
     </rule>
 
@@ -123,7 +117,7 @@
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
             <property name="declareOnFirstLine" value="false"/>
-            <property name="linesCountBeforeDeclare" value="1"/><!--TODO change to 1-->
+            <property name="linesCountBeforeDeclare" value="1"/>
             <property name="linesCountAfterDeclare" value="1"/>
             <property name="spacesCountAroundEqualsSign" value="0"/>
         </properties>
@@ -174,3 +168,4 @@
     <!-- Reports useless @var annotation for constants because the type of constant is always clear -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
 </ruleset>
+
