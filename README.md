@@ -37,6 +37,7 @@ Example for a Magento project:
     <rule ref="SmileLab"/>
 
     <file>app/code</file>
+    <file>app/design</file>
 </ruleset>
 ```
 
