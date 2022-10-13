@@ -15,5 +15,4 @@
     <rule ref="PSR12"/>
 
     <file>SmileLab</file>
-    <exclude-pattern>vendor/*</exclude-pattern>
 </ruleset>
