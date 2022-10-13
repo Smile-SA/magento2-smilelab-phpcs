@@ -25,16 +25,6 @@ jobs:
                   php-version: '${{ matrix.php-version }}'
                   coverage: 'none'
                   tools: 'composer:v2'
-              env:
-                  COMPOSER_AUTH_JSON: |
-                      {
-                          "http-basic": {
-                              "repo.magento.com": {
-                                  "username": "${{ secrets.MAGENTO_USERNAME }}",
-                                  "password": "${{ secrets.MAGENTO_PASSWORD }}"
-                              }
-                          }
-                      }
 
             - name: 'Get composer cache directory'
               id: 'composer-cache'
