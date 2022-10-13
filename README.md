@@ -56,6 +56,7 @@ Example for a community module:
 
     <rule ref="SmileLab"/>
 
+    <file>.</file>
     <exclude-pattern>vendor/*</exclude-pattern>
 </ruleset>
 ```
@@ -72,13 +73,13 @@ For example, if the min version is PHP 7.4:
 You can run phpcs with this command:
 
 ```shell
-php vendor/bin/phpcs -s --extensions=php,phtml
+vendor/bin/phpcs --extensions=php,phtml
 ```
 
 You can fix most of the errors found with:
 
 ```shell
-php vendor/bin/phpcbf --extensions=php,phtml
+vendor/bin/phpcbf --extensions=php,phtml
 ```
 
 ## Guidelines
