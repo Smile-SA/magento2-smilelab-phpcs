@@ -1,0 +1,8 @@
+parameters:
+    level: 6
+    paths:
+        - SmileLab
+    checkMissingIterableValueType: false
+    bootstrapFiles:
+        - vendor/squizlabs/php_codesniffer/autoload.php
+        - vendor/squizlabs/php_codesniffer/src/Util/Tokens.php

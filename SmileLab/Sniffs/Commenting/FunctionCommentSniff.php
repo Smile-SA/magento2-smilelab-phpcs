@@ -43,7 +43,6 @@ class FunctionCommentSniff implements Sniff
         $functionPtrContent = $tokens[$stackPtr + 2]['content'];
         if ($previousCommentClosePtr && $previousCommentOpenPtr) {
             if (!$this->validateCommentBlockExists($phpcsFile, $previousCommentClosePtr, $stackPtr)) {
-
                 if (preg_match('/(?i)__construct|__destruct/', $functionPtrContent)) {
                     return;
                 }
