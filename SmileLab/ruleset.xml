@@ -175,4 +175,3 @@
     <!-- Reports useless @var annotation for constants because the type of constant is always clear -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
 </ruleset>
-
