@@ -41,5 +41,5 @@ jobs:
             - name: 'Run PHP CodeSniffer'
               run: 'vendor/bin/phpcs --extensions=php,phtml'
 
-            - name: 'Run PHPMD'
+            - name: 'Run PHPStan'
               run: 'vendor/bin/phpstan analyse'
