@@ -19,7 +19,7 @@ class FunctionCommentSniff implements Sniff
         'T_PROTECTED',
         'T_STATIC',
         'T_ABSTRACT',
-        'T_FINAL'
+        'T_FINAL',
     ];
 
     /**
