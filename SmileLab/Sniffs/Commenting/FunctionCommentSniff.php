@@ -6,6 +6,7 @@ namespace SmileLab\Sniffs\Commenting;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
+use SmileLab\Helpers\SniffSettingsHelper;
 
 /**
  * Sniff to assert that methods have a doc block.
@@ -21,6 +22,8 @@ class FunctionCommentSniff implements Sniff
         'T_ABSTRACT',
         'T_FINAL',
     ];
+
+    private ?bool $enabledOnAnnotations = null;
 
     /**
      * @inheritdoc
@@ -61,17 +64,24 @@ class FunctionCommentSniff implements Sniff
         for ($tempPtr = $previousCommentClosePtr + 1; $tempPtr < $stackPtr; $tempPtr++) {
             $tokenCode = $tokens[$tempPtr]['code'];
 
-            // Ignore attributes e.g. #[\ReturnTypeWillChange]
-            if ($tokenCode === T_ATTRIBUTE_END) {
-                $attributeFlag = false;
-                continue;
-            }
-            if ($attributeFlag) {
-                continue;
-            }
-            if ($tokenCode === T_ATTRIBUTE) {
-                $attributeFlag = true;
-                continue;
+            $this->enabledOnAnnotations = SniffSettingsHelper::isEnabledByPhpVersion(
+                $this->enabledOnAnnotations,
+                80000
+            );
+
+            if ($this->enabledOnAnnotations) {
+                // PHP >= 8.0: Ignore attributes e.g. #[\ReturnTypeWillChange]
+                if ($tokenCode === T_ATTRIBUTE_END) {
+                    $attributeFlag = false;
+                    continue;
+                }
+                if ($attributeFlag) {
+                    continue;
+                }
+                if ($tokenCode === T_ATTRIBUTE) {
+                    $attributeFlag = true;
+                    continue;
+                }
             }
 
             if (!in_array($tokens[$tempPtr]['type'], $this->validTokensBeforeClosingCommentTag, true)) {

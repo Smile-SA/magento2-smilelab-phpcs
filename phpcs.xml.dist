@@ -12,7 +12,9 @@
     <!-- Show sniff codes -->
     <arg value="s"/>
 
-    <rule ref="SmileLab"/>
+    <rule ref="SmileLab">
+        <exclude name="Magento2.Functions.StaticFunction.StaticFunction"/>
+    </rule>
 
     <file>SmileLab</file>
 </ruleset>
