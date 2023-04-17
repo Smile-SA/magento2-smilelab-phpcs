@@ -84,6 +84,13 @@
     <!-- Checks whether uses at the top of a file are alphabetically sorted -->
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
 
+    <!-- Reports useless fully qualified names (but allow them on class name collision) -->
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+        <properties>
+            <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
+        </properties>
+    </rule>
+
     <!-- Looks for use alias that is same as unqualified name -->
     <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
 
