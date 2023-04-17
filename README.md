@@ -18,6 +18,15 @@ To use this ruleset, require it in composer:
 composer require --dev smile/magento2-smilelab-phpcs
 ```
 
+## Rulesets
+
+Two rulesets are available:
+
+- `SmileLab` (Magento >=2.4.4)
+- `SmileLab-237-243` (Magento >=2.3.7 <2.4.4)
+
+Older versions of Magento (<2.4.4) require a separate ruleset, because they include outdated composer packages which are not compatible with recent versions of the magento/slevomat coding standards.
+
 ## Configuration
 
 Create a configuration file named`phpcs.xml.dist` at the root of your project.
