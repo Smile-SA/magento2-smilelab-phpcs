@@ -51,6 +51,12 @@
     <!-- This sniff enforces trailing commas in multi-line arrays -->
     <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
 
+    <!-- Disallows using public properties -->
+    <rule ref="SlevomatCodingStandard.Classes.ForbiddenPublicProperty"/>
+
+    <!-- Requires use of constructor property promotion -->
+    <rule ref="SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion"/>
+
     <!-- Forbidden PHPDoc annotations -->
     <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
         <properties>
@@ -119,8 +125,9 @@
     <!-- Enforces having declare(strict_types=1) at the top of each PHP file -->
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
-            <property name="newlinesCountBetweenOpenTagAndDeclare" value="2"/>
-            <property name="newlinesCountAfterDeclare" value="2"/>
+            <property name="declareOnFirstLine" value="false"/>
+            <property name="linesCountBeforeDeclare" value="1"/>
+            <property name="linesCountAfterDeclare" value="1"/>
             <property name="spacesCountAroundEqualsSign" value="0"/>
         </properties>
         <exclude-pattern>*.phtml</exclude-pattern>
@@ -161,6 +168,14 @@
 
     <!-- Enforces null type hint on last position in annotations -->
     <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
+
+    <!-- Checks format of union type hints (only enabled if php >= 8.0) -->
+    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
+        <properties>
+            <property name="withSpaces" value="no"/>
+            <property name="nullPosition" value="last"/>
+        </properties>
+    </rule>
 
     <!-- Reports useless @var annotation for constants because the type of constant is always clear -->
     <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>

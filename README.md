@@ -25,7 +25,7 @@ Two rulesets are available:
 - `SmileLab` (Magento >=2.4.4)
 - `SmileLab-237-243` (Magento >=2.3.7 <2.4.4)
 
-Older versions of Magento (<2.4.4) require a separate ruleset, because they include outdated composer packages which are not compatible with recent versions of the magento/slevomat coding standards.
+Older versions of Magento (<2.4.4) require a separate ruleset, because they use an outdated version of the Magento coding standard.
 
 ## Configuration
 
