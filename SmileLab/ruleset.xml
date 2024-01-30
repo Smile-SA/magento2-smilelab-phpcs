@@ -17,10 +17,12 @@
         <exclude name="Magento2.Functions.DiscouragedFunction.DiscouragedWithAlternative"/>
         <!-- Exclude rules that conflict with UselessAnnotation -->
         <exclude name="Magento2.Annotation.MethodArguments"/>
-        <exclude name="Magento2.Annotation.MethodAnnotationStructure.MethodArguments"/>
+        <exclude name="Magento2.Annotation.MethodAnnotationStructure.NoCommentBlock"/>
         <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting"/>
         <!-- Exclude rules that conflict with PSR-12 -->
         <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
+        <!-- No longer exists since v33 of magento-coding-standard but kept for backwards compatibility -->
+        <exclude name="Magento2.Annotation.MethodAnnotationStructure.MethodArguments"/>
     </rule>
 
     <!-- Generic rules not included in PSR-12 -->
