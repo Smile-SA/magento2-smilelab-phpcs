@@ -27,6 +27,9 @@
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         },
+        "audit": {
+            "abandoned": "report"
+        },
         "sort-packages": true
     }
 }
