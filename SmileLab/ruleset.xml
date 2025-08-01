@@ -25,21 +25,27 @@
         <exclude name="Magento2.Annotation.MethodAnnotationStructure.MethodArguments"/>
     </rule>
 
-    <!-- Generic rules not included in PSR-12 -->
+    <!-- Spaces are not allowed after casting operators -->
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    
+    <!-- Exactly one space is allowed after the NOT operator -->
     <rule ref="Generic.Formatting.SpaceAfterNot">
         <properties>
             <property name="spacing" value="0"/>
         </properties>
     </rule>
+
+    <!-- Deprecated functions should not be used -->
     <rule ref="Generic.PHP.DeprecatedFunctions"/>
+
+    <!-- Strings should not be concatenated together (if not stored in variables) -->
     <rule ref="Generic.Strings.UnnecessaryStringConcat">
         <properties>
             <property name="allowMultiline" value="true"/>
         </properties>
     </rule>
 
-    <!-- Custom phpcs rules -->
+    <!-- Methods have a doc block -->
     <rule ref="SmileLab.Commenting.FunctionComment"/>
 
     <!-- Disallows implicit array creation -->
