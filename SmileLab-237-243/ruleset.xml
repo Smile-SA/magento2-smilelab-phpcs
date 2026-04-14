@@ -95,6 +95,7 @@
         <properties>
             <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
         </properties>
+        <exclude-pattern>*/Api/*</exclude-pattern>
     </rule>
 
     <!-- Looks for use alias that is same as unqualified name -->

@@ -27,7 +27,7 @@
 
     <!-- Spaces are not allowed after casting operators -->
     <rule ref="Generic.Formatting.SpaceAfterCast"/>
-    
+
     <!-- Exactly one space is allowed after the NOT operator -->
     <rule ref="Generic.Formatting.SpaceAfterNot">
         <properties>
@@ -105,6 +105,7 @@
         <properties>
             <property name="allowFullyQualifiedNameForCollidingClasses" value="true"/>
         </properties>
+        <exclude-pattern>*/Api/*</exclude-pattern>
     </rule>
 
     <!-- Looks for use alias that is same as unqualified name -->
